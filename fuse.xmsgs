@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="370" delta="unknown" >"Y:/try/pipelined_regfile_3stage.v" Line 7: Empty port in module declaration
+</msg>
+
 </messages>
 

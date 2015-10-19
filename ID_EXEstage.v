@@ -9,12 +9,24 @@ module ID_EXE_stage (
 	input [2:0] opcode_in,
 	input alusrc_in,
 	input [`ASIZE-1:0]waddr_in, 
-
+	input wen_in,
+	input memWrite_in,
+	input memRead_in,
+	input memToReg_in,
+	input branch_in,
+	input [`ISIZE-1:0] PC_in,
+	
 	output reg [`DSIZE-1:0] rdata1_out,
 	output reg [`DSIZE-1:0] rdata2_out,
 	output reg [`DSIZE-1:0] imm_out,
 	output reg [2:0] opcode_out,
 	output reg alusrc_out,
+	output reg wen_out,
+	output reg memWrite_out,
+	output reg memRead_out,
+	output reg memToReg_out,
+	output reg branch_out,
+	output reg [`ISIZE-1:0] PC_out,
 	output reg[`ASIZE-1:0]waddr_out
 	
 );
@@ -35,6 +47,12 @@ always @ (posedge clk) begin
 		imm_out<=0;
 		opcode_out<=0;
 		alusrc_out<=0;
+	   wen_out<=0;
+	   memWrite_out<=0;
+	   memRead_out<=0;
+	   memToReg_out<=0;
+	   branch_out<=0;
+		PC_out<=0;
 	end
    else
 	begin
@@ -44,6 +62,12 @@ always @ (posedge clk) begin
 		imm_out<=imm_in;
 		opcode_out<=opcode_in;
 		alusrc_out<=alusrc_in;
+	   wen_out<=wen_in;
+	   memWrite_out<=memWrite_in;
+	   memRead_out<=memRead_in;
+	   memToReg_out<=memToReg_in;
+	   branch_out<=branch_in;
+		PC_out<=PC_in;
 	end
  
 end

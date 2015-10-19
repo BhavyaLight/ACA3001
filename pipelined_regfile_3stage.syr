@@ -109,7 +109,11 @@ Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\regfile.v
 Parsing verilog file "define.v" included at line 2.
 Parsing module <regfile>.
 Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pip_stage4.v" into library work
+Parsing verilog file "define.v" included at line 2.
 Parsing module <pip_stage4>.
+Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\Pipeline_WB_Stage.v" into library work
+Parsing verilog file "define.v" included at line 2.
+Parsing module <Pipeline_WB_Stage>.
 Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\PC.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <PC1>.
@@ -119,6 +123,9 @@ Parsing module <memory>.
 Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\ID_EXEstage.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <ID_EXE_stage>.
+Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\DummyReg.v" into library work
+Parsing verilog file "define.v" included at line 2.
+Parsing module <DummyReg>.
 Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\control.v" into library work
 Parsing verilog file "define.v" included at line 3.
 Parsing module <control>.
@@ -128,6 +135,7 @@ Parsing module <alu>.
 Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <pipelined_regfile_3stage>.
+WARNING:HDLCompiler:370 - "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v" Line 7: Empty port in module declaration
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -152,6 +160,10 @@ Elaborating module <alu>.
 
 Elaborating module <pip_stage4>.
 
+Elaborating module <DummyReg>.
+
+Elaborating module <Pipeline_WB_Stage>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
@@ -159,10 +171,11 @@ Elaborating module <pip_stage4>.
 Synthesizing Unit <pipelined_regfile_3stage>.
     Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v".
 WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 16-bit adder for signal <PCIN> created at line 33.
+    Found 16-bit adder for signal <PCIN> created at line 59.
+    Found 16-bit adder for signal <res> created at line 104.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred   1 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   4 Multiplexer(s).
 Unit <pipelined_regfile_3stage> synthesized.
 
 Synthesizing Unit <PC1>.
@@ -180,16 +193,24 @@ WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and 
     Summary:
 	inferred   1 RAM(s).
 	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <memory> synthesized.
 
 Synthesizing Unit <control>.
     Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\control.v".
 WARNING:Xst:737 - Found 1-bit latch for signal <alusrc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <regDst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memRead>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <memToReg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <branch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <wen>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred   4 Latch(s).
+	inferred  10 Latch(s).
+	inferred   3 Multiplexer(s).
 Unit <control> synthesized.
 
 Synthesizing Unit <regfile>.
@@ -213,24 +234,31 @@ Synthesizing Unit <ID_EXE_stage>.
     Found 16-bit register for signal <imm_out>.
     Found 3-bit register for signal <opcode_out>.
     Found 1-bit register for signal <alusrc_out>.
+    Found 1-bit register for signal <wen_out>.
+    Found 1-bit register for signal <memWrite_out>.
+    Found 1-bit register for signal <memRead_out>.
+    Found 1-bit register for signal <memToReg_out>.
+    Found 1-bit register for signal <branch_out>.
+    Found 16-bit register for signal <PC_out>.
     Found 4-bit register for signal <waddr_out>.
     Summary:
-	inferred  56 D-type flip-flop(s).
+	inferred  77 D-type flip-flop(s).
 Unit <ID_EXE_stage> synthesized.
 
 Synthesizing Unit <alu>.
     Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\alu.v".
-    Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 24.
-    Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 23.
-    Found 16-bit shifter logical left for signal <a[15]_b[15]_shift_left_4_OUT> created at line 27
-    Found 16-bit shifter logical right for signal <a[15]_b[15]_shift_right_5_OUT> created at line 28
-    Found 16x16-bit multiplier for signal <n0020> created at line 30.
-    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 22.
-    Found 16-bit comparator lessequal for signal <n0006> created at line 29
+    Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 26.
+    Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 25.
+    Found 16-bit shifter logical left for signal <a[15]_b[15]_shift_left_4_OUT> created at line 29
+    Found 16-bit shifter logical right for signal <a[15]_b[15]_shift_right_5_OUT> created at line 30
+    Found 16x16-bit multiplier for signal <n0021> created at line 32.
+    Found 16-bit 8-to-1 multiplexer for signal <out> created at line 24.
+    Found 16-bit comparator lessequal for signal <n0006> created at line 31
+    Found 16-bit comparator equal for signal <zero> created at line 34
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   1 Comparator(s).
+	inferred   2 Comparator(s).
 	inferred   8 Multiplexer(s).
 	inferred   2 Combinational logic shifter(s).
 Unit <alu> synthesized.
@@ -238,37 +266,61 @@ Unit <alu> synthesized.
 Synthesizing Unit <pip_stage4>.
     Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pip_stage4.v".
     Found 16-bit register for signal <w_data_out>.
+    Found 16-bit register for signal <Rdata2_out>.
+    Found 1-bit register for signal <memWrite_out>.
+    Found 1-bit register for signal <memRead_out>.
+    Found 1-bit register for signal <memToReg_out>.
+    Found 1-bit register for signal <wen_out>.
     Found 4-bit register for signal <w_addr_out>.
     Summary:
-	inferred  20 D-type flip-flop(s).
+	inferred  40 D-type flip-flop(s).
 Unit <pip_stage4> synthesized.
+
+Synthesizing Unit <DummyReg>.
+    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\DummyReg.v".
+    Found 16-bit register for signal <aluout_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <DummyReg> synthesized.
+
+Synthesizing Unit <Pipeline_WB_Stage>.
+    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\Pipeline_WB_Stage.v".
+    Found 16-bit register for signal <w_data_out>.
+    Found 1-bit register for signal <wen_out>.
+    Found 4-bit register for signal <w_addr_out>.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+Unit <Pipeline_WB_Stage> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 256x16-bit dual-port RAM                              : 1
+# RAMs                                                 : 2
+ 256x16-bit dual-port RAM                              : 2
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 2
- 16-bit adder                                          : 1
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Registers                                            : 11
- 1-bit register                                        : 1
- 16-bit register                                       : 5
+# Registers                                            : 27
+ 1-bit register                                        : 11
+ 16-bit register                                       : 9
  256-bit register                                      : 1
  3-bit register                                        : 1
- 4-bit register                                        : 2
- 8-bit register                                        : 1
-# Latches                                              : 4
- 1-bit latch                                           : 4
-# Comparators                                          : 3
+ 4-bit register                                        : 3
+ 8-bit register                                        : 2
+# Latches                                              : 10
+ 1-bit latch                                           : 10
+# Comparators                                          : 4
+ 16-bit comparator equal                               : 1
  16-bit comparator lessequal                           : 1
  4-bit comparator equal                                : 2
-# Multiplexers                                         : 31
+# Multiplexers                                         : 39
+ 1-bit 2-to-1 multiplexer                              : 5
  16-bit 16-to-1 multiplexer                            : 3
- 16-bit 2-to-1 multiplexer                             : 28
+ 16-bit 2-to-1 multiplexer                             : 30
+ 4-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 2
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -283,8 +335,8 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 =========================================================================
 
 
-Synthesizing (advanced) Unit <memory>.
-INFO:Xst:3226 - The RAM <Mram_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <addr_r>
+Synthesizing (advanced) Unit <pipelined_regfile_3stage>.
+INFO:Xst:3226 - The RAM <im/Mram_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <im/addr_r>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -293,38 +345,51 @@ INFO:Xst:3226 - The RAM <Mram_memory> will be implemented as a BLOCK RAM, absorb
     |     mode           | write-first                         |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <addr>          |          |
+    |     addrA          | connected to signal <PCOUT<7:0>>    |          |
     |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
+    |     doA            | connected to signal <INST>          |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-Unit <memory> synthesized (advanced).
-
-Synthesizing (advanced) Unit <pipelined_regfile_3stage>.
-The following registers are absorbed into counter <pc/currPC>: 1 register on signal <pc/currPC>.
+INFO:Xst:3226 - The RAM <dm/Mram_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <dm/addr_r>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <aluout_EXE_DM<7:0>> |          |
+    |     diA            | connected to signal <rdata2_EXE_DM> |          |
+    |     doA            | connected to signal <readMem>       |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
 Unit <pipelined_regfile_3stage> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 256x16-bit single-port block RAM                      : 1
+# RAMs                                                 : 2
+ 256x16-bit single-port block RAM                      : 2
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 1
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Counters                                             : 1
- 16-bit up counter                                     : 1
-# Registers                                            : 332
- Flip-Flops                                            : 332
-# Comparators                                          : 3
+# Registers                                            : 426
+ Flip-Flops                                            : 426
+# Comparators                                          : 4
+ 16-bit comparator equal                               : 1
  16-bit comparator lessequal                           : 1
  4-bit comparator equal                                : 2
-# Multiplexers                                         : 31
+# Multiplexers                                         : 52
+ 1-bit 2-to-1 multiplexer                              : 19
  16-bit 16-to-1 multiplexer                            : 3
- 16-bit 2-to-1 multiplexer                             : 28
+ 16-bit 2-to-1 multiplexer                             : 29
+ 4-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 2
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -336,11 +401,11 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <imm_out_3> in Unit <ID_EXE_stage> is equivalent to the following 12 FFs/Latches, which will be removed : <imm_out_4> <imm_out_5> <imm_out_6> <imm_out_7> <imm_out_8> <imm_out_9> <imm_out_10> <imm_out_11> <imm_out_12> <imm_out_13> <imm_out_14> <imm_out_15> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/imm_out_3> in Unit <pipelined_regfile_3stage> is equivalent to the following 12 FFs/Latches, which will be removed : <PIPE1/imm_out_4> <PIPE1/imm_out_5> <PIPE1/imm_out_6> <PIPE1/imm_out_7> <PIPE1/imm_out_8> <PIPE1/imm_out_9> <PIPE1/imm_out_10> <PIPE1/imm_out_11> <PIPE1/imm_out_12> <PIPE1/imm_out_13> <PIPE1/imm_out_14> <PIPE1/imm_out_15> 
 
-Optimizing unit <ID_EXE_stage> ...
+Optimizing unit <DummyReg> ...
 
-Optimizing unit <pip_stage4> ...
+Optimizing unit <Pipeline_WB_Stage> ...
 
 Optimizing unit <pipelined_regfile_3stage> ...
 
@@ -352,15 +417,17 @@ Optimizing unit <control> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block pipelined_regfile_3stage, actual ratio is 40.
-FlipFlop PIPE1/alusrc_out has been replicated 2 time(s)
-FlipFlop PIPE1/imm_out_1 has been replicated 2 time(s)
-FlipFlop PIPE1/imm_out_3 has been replicated 2 time(s)
-FlipFlop PIPE1/rdata2_out_1 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block pipelined_regfile_3stage, actual ratio is 50.
+FlipFlop PIPE1/alusrc_out has been replicated 3 time(s)
+FlipFlop PIPE1/imm_out_1 has been replicated 1 time(s)
+FlipFlop PIPE1/imm_out_3 has been replicated 3 time(s)
+FlipFlop PIPE1/rdata2_out_1 has been replicated 1 time(s)
 FlipFlop PIPE1/opcode_out_2 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop PIPE1/opcode_out_1 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop PIPE1/opcode_out_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop PIPE1/branch_out has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop PIPE1/alusrc_out has been replicated 1 time(s) to handle iob=true attribute.
+Latch C0/regDst has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -368,8 +435,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 348
- Flip-Flops                                            : 348
+# Registers                                            : 427
+ Flip-Flops                                            : 427
 
 =========================================================================
 
@@ -392,31 +459,31 @@ Top Level Output File Name         : pipelined_regfile_3stage.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 811
+# BELS                             : 1045
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 16
-#      LUT2                        : 4
-#      LUT3                        : 61
-#      LUT4                        : 19
-#      LUT5                        : 40
-#      LUT6                        : 493
-#      MUXCY                       : 40
-#      MUXF7                       : 70
-#      MUXF8                       : 32
+#      LUT2                        : 21
+#      LUT3                        : 82
+#      LUT4                        : 58
+#      LUT5                        : 294
+#      LUT6                        : 310
+#      MUXCY                       : 61
+#      MUXF7                       : 103
+#      MUXF8                       : 48
 #      VCC                         : 1
-#      XORCY                       : 32
-# FlipFlops/Latches                : 352
-#      FDR                         : 345
+#      XORCY                       : 48
+# FlipFlops/Latches                : 438
+#      FDR                         : 424
 #      FDS                         : 3
-#      LD                          : 4
-# RAMS                             : 1
-#      RAMB8BWER                   : 1
+#      LD                          : 11
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 173
+# IO Buffers                       : 263
 #      IBUF                        : 1
-#      OBUF                        : 172
+#      OBUF                        : 262
 # DSPs                             : 1
 #      DSP48A1                     : 1
 
@@ -427,21 +494,21 @@ Selected Device : 6slx4csg225-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             348  out of   4800     7%  
- Number of Slice LUTs:                  635  out of   2400    26%  
-    Number used as Logic:               635  out of   2400    26%  
+ Number of Slice Registers:             432  out of   4800     9%  
+ Number of Slice LUTs:                  783  out of   2400    32%  
+    Number used as Logic:               783  out of   2400    32%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    657
-   Number with an unused Flip Flop:     309  out of    657    47%  
-   Number with an unused LUT:            22  out of    657     3%  
-   Number of fully used LUT-FF pairs:   326  out of    657    49%  
+ Number of LUT Flip Flop pairs used:    846
+   Number with an unused Flip Flop:     414  out of    846    48%  
+   Number with an unused LUT:            63  out of    846     7%  
+   Number of fully used LUT-FF pairs:   369  out of    846    43%  
    Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                         175
- Number of bonded IOBs:                 174  out of    132   131% (*) 
-    IOB Flip Flops/Latches:               4
+ Number of IOs:                         266
+ Number of bonded IOBs:                 264  out of    132   200% (*) 
+    IOB Flip Flops/Latches:               6
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     12     8%  
@@ -472,9 +539,12 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 350   |
-INST_15_OBUF                       | NONE(C0/alusrc)        | 4     |
+clk                                | BUFGP                  | 430   |
+C0/_n0039<1>(C0/_n0039<1>1:O)      | NONE(*)(C0/aluop_0)    | 11    |
 -----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -486,8 +556,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 6.404ns (Maximum Frequency: 156.141MHz)
-   Minimum input arrival time before clock: 3.727ns
-   Maximum output required time after clock: 9.184ns
+   Minimum input arrival time before clock: 4.478ns
+   Maximum output required time after clock: 9.214ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -497,51 +567,52 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 6.404ns (frequency: 156.141MHz)
-  Total number of paths / destination ports: 7002 / 362
+  Total number of paths / destination ports: 16086 / 460
 -------------------------------------------------------------------------
 Delay:               6.404ns (Levels of Logic = 3)
   Source:            im/Mram_memory (RAM)
-  Destination:       ALU0/Mmult_n0020 (DSP)
+  Destination:       ALU0/Mmult_n0021 (DSP)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: im/Mram_memory to ALU0/Mmult_n0020
+  Data Path: im/Mram_memory to ALU0/Mmult_n0021
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      RAMB8BWER:CLKAWRCLK->DOADO5   66   1.650   1.758  im/Mram_memory (INST_5_OBUF)
-     LUT4:I2->O            1   0.203   0.580  RF0/wen_waddr[3]_AND_43_o_SW0 (N5)
-     LUT5:I4->O           16   0.205   1.005  RF0/wen_waddr[3]_AND_43_o (RF0/wen_waddr[3]_AND_43_o)
+     LUT4:I2->O            1   0.203   0.580  RF0/wen_waddr[3]_AND_31_o_SW0 (N6)
+     LUT6:I5->O           16   0.205   1.005  RF0/wen_waddr[3]_AND_31_o (RF0/wen_waddr[3]_AND_31_o)
      LUT3:I2->O            3   0.205   0.650  RF0/Mmux_rdata117 (rdata1_0_OBUF)
-     DSP48A1:B0                0.149          ALU0/Mmult_n0020
+     DSP48A1:B0                0.149          ALU0/Mmult_n0021
     ----------------------------------------
     Total                      6.404ns (2.412ns logic, 3.992ns route)
                                        (37.7% logic, 62.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 349 / 349
+  Total number of paths / destination ports: 430 / 430
 -------------------------------------------------------------------------
-Offset:              3.727ns (Levels of Logic = 1)
+Offset:              4.478ns (Levels of Logic = 2)
   Source:            rst (PAD)
-  Destination:       pc/currPC_0 (FF)
+  Destination:       dm/Mram_memory (RAM)
   Destination Clock: clk rising
 
-  Data Path: rst to pc/currPC_0
+  Data Path: rst to dm/Mram_memory
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           349   1.222   2.075  rst_IBUF (rst_IBUF)
-     FDR:R                     0.430          pc/currPC_0
+     IBUF:I->O           429   1.222   2.187  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            2   0.203   0.616  dm/Mmux_BUS_000111 (dm/BUS_0001)
+     RAMB8BWER:WEAWEL0         0.250          dm/Mram_memory
     ----------------------------------------
-    Total                      3.727ns (1.652ns logic, 2.075ns route)
-                                       (44.3% logic, 55.7% route)
+    Total                      4.478ns (1.675ns logic, 2.803ns route)
+                                       (37.4% logic, 62.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 4814 / 172
+  Total number of paths / destination ports: 5287 / 261
 -------------------------------------------------------------------------
-Offset:              9.184ns (Levels of Logic = 4)
+Offset:              9.214ns (Levels of Logic = 4)
   Source:            PIPE1/imm_out_3_2 (FF)
   Destination:       aluout<15> (PAD)
   Source Clock:      clk rising
@@ -551,25 +622,49 @@ Offset:              9.184ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q             12   0.447   1.013  PIPE1/imm_out_3_2 (PIPE1/imm_out_3_2)
-     LUT3:I1->O            5   0.203   0.714  Mmux_rdata2_imm_ID_EXE121 (rdata2_imm_ID_EXE_5_OBUF)
-     DSP48A1:A5->M15       1   2.835   0.580  ALU0/Mmult_n0020 (ALU0/n0020<15>)
+     LUT3:I1->O            6   0.203   0.744  Mmux_rdata2_imm_ID_EXE121 (rdata2_imm_ID_EXE_5_OBUF)
+     DSP48A1:A5->M15       1   2.835   0.580  ALU0/Mmult_n0021 (ALU0/n0021<15>)
      LUT6:I5->O            2   0.205   0.616  ALU0/Mmux_out787 (aluout_15_OBUF)
      OBUF:I->O                 2.571          aluout_15_OBUF (aluout<15>)
     ----------------------------------------
-    Total                      9.184ns (6.261ns logic, 2.923ns route)
-                                       (68.2% logic, 31.8% route)
+    Total                      9.214ns (6.261ns logic, 2.953ns route)
+                                       (68.0% logic, 32.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'C0/_n0039<1>'
+  Total number of paths / destination ports: 241 / 17
+-------------------------------------------------------------------------
+Offset:              7.921ns (Levels of Logic = 6)
+  Source:            C0/regDst (LATCH)
+  Destination:       rdata2<1> (PAD)
+  Source Clock:      C0/_n0039<1> falling
+
+  Data Path: C0/regDst to rdata2<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               6   0.498   0.973  C0/regDst (C0/regDst)
+     LUT3:I0->O           64   0.205   1.744  Mmux_RAddr211 (RAddr2<0>)
+     LUT6:I4->O            1   0.203   0.000  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_47 (RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_47)
+     MUXF7:I1->O           1   0.140   0.000  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_3_f7_6 (RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_3_f77)
+     MUXF8:I1->O           1   0.152   0.580  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_2_f8_6 (RF0/raddr2[3]_regdata[15][15]_wide_mux_27_OUT<1>)
+     LUT3:I2->O            3   0.205   0.650  RF0/Mmux_rdata281 (rdata2_1_OBUF)
+     OBUF:I->O                 2.571          rdata2_1_OBUF (rdata2<1>)
+    ----------------------------------------
+    Total                      7.921ns (3.974ns logic, 3.947ns route)
+                                       (50.2% logic, 49.8% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock INST_15_OBUF
+Clock to Setup on destination clock C0/_n0039<1>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.771|         |         |         |
+clk            |         |         |    3.354|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -577,21 +672,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-INST_15_OBUF   |    1.283|         |         |         |
+C0/_n0039<1>   |         |    4.802|         |         |
 clk            |    6.404|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.08 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.08 secs
  
 --> 
 
-Total memory usage is 269480 kilobytes
+Total memory usage is 269928 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    9 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

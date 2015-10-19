@@ -7,6 +7,9 @@
 `define SRL 4'b0101
 `define COM 4'b0110
 `define MUL  4'b0111
+`define LW 4'b1000
+`define SW 4'b1001
+`define BEQ 4'b1010  
 
 //for fileIO
 `timescale 1ns / 10ps

@@ -7,13 +7,13 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module test_bench_3_stage_pipeline;
+module test_bench_5_stage_pipeline;
+
 
 	// Inputs
 	reg clk;
 	reg rst;
 	reg fileid;
-
 
 	// Outputs
 	wire [15:0] PCOUT;
@@ -28,8 +28,21 @@ module test_bench_3_stage_pipeline;
 	wire alusrc_ID_EXE;
 	wire [3:0] waddr_out_ID_EXE;
 	wire [15:0] aluout;
-   wire [3:0] waddr_out_ID_S4;
-	wire [15:0] aluout_S4;
+	wire [3:0] waddr_out_EXE_DM;
+	wire [15:0] aluout_EXE_DM;
+	wire [15:0] rdata2_EXE_DM;
+	wire branch_ID_EXE;
+	wire regDst;
+	wire memWrite_EXE_DM;
+	wire memRead_EXE_DM;
+	wire memToReg_EXE_DM;
+	wire wen_DM_WB;
+	wire [3:0] waddr_DM_WB;
+	wire [15:0] aluout_DM_WB;
+	wire [15:0] readMem;
+	wire [15:0] aluout_DM;
+	wire [15:0] aluout_WB;
+
 	// Instantiate the Unit Under Test (UUT)
 	pipelined_regfile_3stage uut (
 		.clk(clk), 
@@ -43,13 +56,26 @@ module test_bench_3_stage_pipeline;
 		.rdata2_ID_EXE(rdata2_ID_EXE), 
 		.imm_ID_EXE(imm_ID_EXE), 
 		.rdata2_imm_ID_EXE(rdata2_imm_ID_EXE), 
-		.aluop_ID_EXE(aluop_ID_EXE),
-		.alusrc_ID_EXE(alusrc_ID_EXE),
+		.aluop_ID_EXE(aluop_ID_EXE), 
+		.alusrc_ID_EXE(alusrc_ID_EXE), 
 		.waddr_out_ID_EXE(waddr_out_ID_EXE), 
-		.aluout(aluout),
-		.waddr_out_ID_S4(waddr_out_ID_S4), 
-		.aluout_S4(aluout_S4)
+		.aluout(aluout), 
+		.waddr_out_EXE_DM(waddr_out_EXE_DM), 
+		.aluout_EXE_DM(aluout_EXE_DM), 
+		.rdata2_EXE_DM(rdata2_EXE_DM), 
+		.branch_ID_EXE(branch_ID_EXE), 
+		.regDst(regDst), 
+		.memWrite_EXE_DM(memWrite_EXE_DM), 
+		.memRead_EXE_DM(memRead_EXE_DM), 
+		.memToReg_EXE_DM(memToReg_EXE_DM), 
+		.wen_DM_WB(wen_DM_WB), 
+		.waddr_DM_WB(waddr_DM_WB), 
+		.aluout_DM_WB(aluout_DM_WB), 
+		.readMem(readMem), 
+		.aluout_DM(aluout_DM), 
+		.aluout_WB(aluout_WB)
 	);
+
 
 always #15 clk = ~clk;
 	initial begin
