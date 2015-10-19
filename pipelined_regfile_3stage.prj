@@ -1,0 +1,8 @@
+verilog work "regfile.v"
+verilog work "pip_stage4.v"
+verilog work "PC.v"
+verilog work "memory.v"
+verilog work "ID_EXEstage.v"
+verilog work "control.v"
+verilog work "alu.v"
+verilog work "pipelined_regfile_3stage.v"

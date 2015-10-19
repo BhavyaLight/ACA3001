@@ -1,0 +1,19 @@
+//testbench for imm testing opcode 4 for sll and opcode 5 for srl
+0000 0000
+0001 0531
+0002 1f02
+0003 7e51
+0004 6a55
+0005 26a2
+0006 3fa5
+
+0007 0de1
+0008 5bd1
+0009 3b13
+000a 0de2
+000b 2b31
+000c 44d3	
+000d 0312
+000e 29e3
+000f 1d23
+
