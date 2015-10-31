@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: pipelined_regfile_3stage.prj
 
@@ -105,50 +105,51 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\regfile.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\regfile.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <regfile>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pip_stage4.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pip_stage4.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <pip_stage4>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\Pipeline_WB_Stage.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\Pipeline_WB_Stage.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <Pipeline_WB_Stage>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\PC.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\PC.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <PC1>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\memory.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\memory.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <memory>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\ID_EXEstage.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\ID_EXEstage.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <ID_EXE_stage>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\DummyReg.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\DummyReg.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <DummyReg>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\control.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\control.v" into library work
 Parsing verilog file "define.v" included at line 3.
 Parsing module <control>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\alu.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\alu.v" into library work
 Parsing verilog file "define.v" included at line 1.
 Parsing module <alu>.
-Analyzing Verilog file "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v" into library work
+Analyzing Verilog file "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" into library work
 Parsing verilog file "define.v" included at line 2.
 Parsing module <pipelined_regfile_3stage>.
-WARNING:HDLCompiler:370 - "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v" Line 7: Empty port in module declaration
+WARNING:HDLCompiler:370 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" Line 7: Empty port in module declaration
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
+WARNING:HDLCompiler:1016 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" Line 87: Port jal is not connected to this instance
 
 Elaborating module <pipelined_regfile_3stage>.
 
 Elaborating module <PC1>.
 
 Elaborating module <memory>.
-"\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\memory.v" Line 47. $write Opening Fileid 0\n
-WARNING:HDLCompiler:816 - "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\memory.v" Line 49: System function call feof not supported
-WARNING:HDLCompiler:817 - "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\memory.v" Line 62: System task fclose ignored for synthesis
+"C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\memory.v" Line 47. $write Opening Fileid 0\n
+WARNING:HDLCompiler:816 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\memory.v" Line 49: System function call feof not supported
+WARNING:HDLCompiler:817 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\memory.v" Line 62: System task fclose ignored for synthesis
 
 Elaborating module <control>.
 
@@ -169,24 +170,26 @@ Elaborating module <Pipeline_WB_Stage>.
 =========================================================================
 
 Synthesizing Unit <pipelined_regfile_3stage>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pipelined_regfile_3stage.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v".
 WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 16-bit adder for signal <PCIN> created at line 59.
-    Found 16-bit adder for signal <res> created at line 104.
+INFO:Xst:3210 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" line 87: Output port <jal> of the instance <C0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" line 87: Output port <jr> of the instance <C0> is unconnected or connected to loadless signal.
+    Found 16-bit adder for signal <PCIN> created at line 62.
+    Found 16-bit adder for signal <res> created at line 116.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   4 Multiplexer(s).
 Unit <pipelined_regfile_3stage> synthesized.
 
 Synthesizing Unit <PC1>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\PC.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\PC.v".
     Found 16-bit register for signal <currPC>.
     Summary:
 	inferred  16 D-type flip-flop(s).
 Unit <PC1> synthesized.
 
 Synthesizing Unit <memory>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\memory.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\memory.v".
 WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 256x16-bit dual-port RAM <Mram_memory> for signal <memory>.
     Found 8-bit register for signal <addr_r<7:0>>.
@@ -197,7 +200,7 @@ WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and 
 Unit <memory> synthesized.
 
 Synthesizing Unit <control>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\control.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\control.v".
 WARNING:Xst:737 - Found 1-bit latch for signal <alusrc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <regDst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <memWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -207,14 +210,17 @@ WARNING:Xst:737 - Found 1-bit latch for signal <branch>. Latches may be generate
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <aluop<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <jump>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <jal>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <jr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <wen>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred  10 Latch(s).
+	inferred  13 Latch(s).
 	inferred   3 Multiplexer(s).
 Unit <control> synthesized.
 
 Synthesizing Unit <regfile>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\regfile.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\regfile.v".
     Found 256-bit register for signal <n0036>.
     Found 16-bit 16-to-1 multiplexer for signal <waddr[3]_regdata[15][15]_wide_mux_2_OUT> created at line 46.
     Found 16-bit 16-to-1 multiplexer for signal <raddr1[3]_regdata[15][15]_wide_mux_24_OUT> created at line 49.
@@ -228,7 +234,7 @@ Synthesizing Unit <regfile>.
 Unit <regfile> synthesized.
 
 Synthesizing Unit <ID_EXE_stage>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\ID_EXEstage.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\ID_EXEstage.v".
     Found 16-bit register for signal <rdata1_out>.
     Found 16-bit register for signal <rdata2_out>.
     Found 16-bit register for signal <imm_out>.
@@ -246,7 +252,7 @@ Synthesizing Unit <ID_EXE_stage>.
 Unit <ID_EXE_stage> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\alu.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\alu.v".
     Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 26.
     Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 25.
     Found 16-bit shifter logical left for signal <a[15]_b[15]_shift_left_4_OUT> created at line 29
@@ -264,7 +270,7 @@ Synthesizing Unit <alu>.
 Unit <alu> synthesized.
 
 Synthesizing Unit <pip_stage4>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\pip_stage4.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pip_stage4.v".
     Found 16-bit register for signal <w_data_out>.
     Found 16-bit register for signal <Rdata2_out>.
     Found 1-bit register for signal <memWrite_out>.
@@ -277,14 +283,14 @@ Synthesizing Unit <pip_stage4>.
 Unit <pip_stage4> synthesized.
 
 Synthesizing Unit <DummyReg>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\DummyReg.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\DummyReg.v".
     Found 16-bit register for signal <aluout_out>.
     Summary:
 	inferred  16 D-type flip-flop(s).
 Unit <DummyReg> synthesized.
 
 Synthesizing Unit <Pipeline_WB_Stage>.
-    Related source file is "\\ds3.sce.ntu.edu.sg\xd1$\student\chan0727\try\Pipeline_WB_Stage.v".
+    Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\Pipeline_WB_Stage.v".
     Found 16-bit register for signal <w_data_out>.
     Found 1-bit register for signal <wen_out>.
     Found 4-bit register for signal <w_addr_out>.
@@ -310,8 +316,8 @@ Macro Statistics
  3-bit register                                        : 1
  4-bit register                                        : 3
  8-bit register                                        : 2
-# Latches                                              : 10
- 1-bit latch                                           : 10
+# Latches                                              : 13
+ 1-bit latch                                           : 13
 # Comparators                                          : 4
  16-bit comparator equal                               : 1
  16-bit comparator lessequal                           : 1
@@ -401,6 +407,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <jal> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <PIPE1/imm_out_3> in Unit <pipelined_regfile_3stage> is equivalent to the following 12 FFs/Latches, which will be removed : <PIPE1/imm_out_4> <PIPE1/imm_out_5> <PIPE1/imm_out_6> <PIPE1/imm_out_7> <PIPE1/imm_out_8> <PIPE1/imm_out_9> <PIPE1/imm_out_10> <PIPE1/imm_out_11> <PIPE1/imm_out_12> <PIPE1/imm_out_13> <PIPE1/imm_out_14> <PIPE1/imm_out_15> 
 
 Optimizing unit <DummyReg> ...
@@ -414,6 +421,7 @@ Optimizing unit <regfile> ...
 Optimizing unit <alu> ...
 
 Optimizing unit <control> ...
+WARNING:Xst:2677 - Node <C0/jr> of sequential type is unconnected in block <pipelined_regfile_3stage>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -464,8 +472,8 @@ Primitive and Black Box Usage:
 #      INV                         : 2
 #      LUT1                        : 16
 #      LUT2                        : 21
-#      LUT3                        : 82
-#      LUT4                        : 58
+#      LUT3                        : 81
+#      LUT4                        : 59
 #      LUT5                        : 294
 #      LUT6                        : 310
 #      MUXCY                       : 61
@@ -473,17 +481,17 @@ Primitive and Black Box Usage:
 #      MUXF8                       : 48
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 438
+# FlipFlops/Latches                : 439
 #      FDR                         : 424
 #      FDS                         : 3
-#      LD                          : 11
+#      LD                          : 12
 # RAMS                             : 2
 #      RAMB8BWER                   : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 263
+# IO Buffers                       : 281
 #      IBUF                        : 1
-#      OBUF                        : 262
+#      OBUF                        : 280
 # DSPs                             : 1
 #      DSP48A1                     : 1
 
@@ -499,16 +507,16 @@ Slice Logic Utilization:
     Number used as Logic:               783  out of   2400    32%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    846
-   Number with an unused Flip Flop:     414  out of    846    48%  
-   Number with an unused LUT:            63  out of    846     7%  
-   Number of fully used LUT-FF pairs:   369  out of    846    43%  
+ Number of LUT Flip Flop pairs used:    847
+   Number with an unused Flip Flop:     415  out of    847    48%  
+   Number with an unused LUT:            64  out of    847     7%  
+   Number of fully used LUT-FF pairs:   368  out of    847    43%  
    Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                         266
- Number of bonded IOBs:                 264  out of    132   200% (*) 
-    IOB Flip Flops/Latches:               6
+ Number of IOs:                         285
+ Number of bonded IOBs:                 282  out of    132   213% (*) 
+    IOB Flip Flops/Latches:               7
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     12     8%  
@@ -540,7 +548,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 430   |
-C0/_n0039<1>(C0/_n0039<1>1:O)      | NONE(*)(C0/aluop_0)    | 11    |
+C0/_n0045<1>(C0/_n0045<1>1:O)      | NONE(*)(C0/aluop_0)    | 12    |
 -----------------------------------+------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -610,7 +618,7 @@ Offset:              4.478ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 5287 / 261
+  Total number of paths / destination ports: 5743 / 278
 -------------------------------------------------------------------------
 Offset:              9.214ns (Levels of Logic = 4)
   Source:            PIPE1/imm_out_3_2 (FF)
@@ -631,13 +639,13 @@ Offset:              9.214ns (Levels of Logic = 4)
                                        (68.0% logic, 32.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'C0/_n0039<1>'
-  Total number of paths / destination ports: 241 / 17
+Timing constraint: Default OFFSET OUT AFTER for Clock 'C0/_n0045<1>'
+  Total number of paths / destination ports: 242 / 18
 -------------------------------------------------------------------------
 Offset:              7.921ns (Levels of Logic = 6)
   Source:            C0/regDst (LATCH)
   Destination:       rdata2<1> (PAD)
-  Source Clock:      C0/_n0039<1> falling
+  Source Clock:      C0/_n0045<1> falling
 
   Data Path: C0/regDst to rdata2<1>
                                 Gate     Net
@@ -659,7 +667,7 @@ Offset:              7.921ns (Levels of Logic = 6)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock C0/_n0039<1>
+Clock to Setup on destination clock C0/_n0045<1>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -672,21 +680,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-C0/_n0039<1>   |         |    4.802|         |         |
+C0/_n0045<1>   |         |    4.802|         |         |
 clk            |    6.404|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.08 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.43 secs
  
 --> 
 
-Total memory usage is 269928 kilobytes
+Total memory usage is 295528 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   16 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 

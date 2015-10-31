@@ -42,6 +42,8 @@ module test_bench_5_stage_pipeline;
 	wire [15:0] readMem;
 	wire [15:0] aluout_DM;
 	wire [15:0] aluout_WB;
+	wire zero;
+	wire [15:0] res;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipelined_regfile_3stage uut (
@@ -73,7 +75,9 @@ module test_bench_5_stage_pipeline;
 		.aluout_DM_WB(aluout_DM_WB), 
 		.readMem(readMem), 
 		.aluout_DM(aluout_DM), 
-		.aluout_WB(aluout_WB)
+		.aluout_WB(aluout_WB),
+		.zero(zero),
+		.res(res)
 	);
 
 

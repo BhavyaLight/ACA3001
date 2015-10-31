@@ -9,7 +9,11 @@
 `define MUL  4'b0111
 `define LW 4'b1000
 `define SW 4'b1001
-`define BEQ 4'b1010  
+`define BEQ 4'b1010
+`define JR 4'b1011
+`define JAL 4'1101
+`define JUMP 4'b1100
+ 
 
 //for fileIO
 `timescale 1ns / 10ps

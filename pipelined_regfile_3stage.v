@@ -5,7 +5,7 @@ module pipelined_regfile_3stage(clk, rst, fileid, PCOUT
 ,branch_ID_EXE, INST, rdata1, rdata2, rdata1_ID_EXE, rdata2_ID_EXE, imm_ID_EXE,rdata2_imm_ID_EXE,
  aluop_ID_EXE, alusrc_ID_EXE, waddr_out_ID_EXE,aluout, waddr_out_EXE_DM,aluout_EXE_DM,rdata2_EXE_DM,
 ,regDst,memWrite_EXE_DM,memRead_EXE_DM,memToReg_EXE_DM,wen_DM_WB,
- waddr_DM_WB,aluout_DM_WB,readMem,aluout_DM,aluout_WB);
+ waddr_DM_WB,aluout_DM_WB,readMem,aluout_DM,aluout_WB, zero,res,jump,jr);
 
 input clk;				
 											
@@ -25,7 +25,9 @@ output [`DSIZE-1:0] imm_ID_EXE; //
 output [`DSIZE-1:0] rdata2_imm_ID_EXE; //
 output [`ASIZE-1:0] waddr_out_ID_EXE;	//
 output [`DSIZE-1:0] aluout;	//
-output [`DSIZE-1:0] rdata2_EXE_DM;			
+output [`DSIZE-1:0] rdata2_EXE_DM;	
+output zero;
+output [`ISIZE-1:0] res; 		
 //Stage DM
 output [`ASIZE-1:0] waddr_out_EXE_DM; //	
 output [`DSIZE-1:0] aluout_EXE_DM; //
@@ -46,7 +48,8 @@ output memWrite_EXE_DM;//
 output memRead_EXE_DM;//
 output memToReg_EXE_DM;//
 output wen_DM_WB;//
-
+output jump;
+output jr;
 //Program counter
 wire [`ISIZE-1:0]PCIN;
 wire [`ISIZE-1:0]PCNEXT;
@@ -68,14 +71,24 @@ wire [2:0] aluop;
 wire memWrite;
 wire memRead;
 wire memToReg;
-wire branch;
+wire branch; 
+wire jump;
+wire jr;
+wire [`DSIZE-1:0] concatenator;
 //wire alusrc missing
 
+assign concatenator = {{PCOUT[15:12]},{INST[11:0]}};
+
+wire [`ASIZE-1:0]PCAddr_mux = jump? concatenator : PCNEXT;
+
+wire [`ASIZE-1:0]PCAddr_mux2 = jr? PCAddr_mux2 : rdata1;
+
 //---------------------------------------------------STAGE DECODE-------------------------------------------------
-control C0 (.inst(INST[15:12]),.wen(wen),.alusrc(alusrc),.regDst(regDst),.memWrite(memWrite),.memRead(memRead),.memToReg(memToReg),.branch(branch), .aluop(aluop));
+control C0 (.inst(INST[15:12]),.wen(wen),.alusrc(alusrc),.regDst(regDst),.memWrite(memWrite),.memRead(memRead),.memToReg(memToReg),.branch(branch), .aluop(aluop), .jump(jump));
   //MUX 
 wire [`ASIZE-1:0] RAddr2= regDst ? INST[11:8] : INST[3:0];
 regfile  RF0 ( .clk(clk), .rst(rst), .wen(wen_DM_WB), .raddr1(INST[7:4]), .raddr2(RAddr2), .waddr(waddr_DM_WB), .wdata(aluout_DM_WB), .rdata1(rdata1), .rdata2(rdata2));//note that waddr needs to come from pipeline register 
+
 
 /*
 Bhavya's Note on naming convention:
@@ -97,11 +110,10 @@ ID_EXE_stage PIPE1(.clk(clk), .rst(rst), .rdata1_in(rdata1),.rdata2_in(rdata2),.
 wire [`DSIZE-1:0]rdata2_imm_ID_EXE=alusrc_ID_EXE ? imm_ID_EXE : rdata2_ID_EXE;// mux for selecting immedaite or the rdata2 value
 
 //Branch
-wire zero;
 
 alu ALU0( .a(rdata1_ID_EXE), .b(rdata2_imm_ID_EXE), .op(aluop_ID_EXE), .out(aluout),.zero(zero));//ALU takes its input from pipeline register and the output of mux.
 //Mux for PC
-wire [`ISIZE-1:0] res=PC_ID_EXE+imm_ID_EXE;
+assign res=PC_ID_EXE+imm_ID_EXE;
 assign PCNEXT=zero&branch_ID_EXE ? res : PC_ID_EXE;
 
 wire wen_EXE_DM;

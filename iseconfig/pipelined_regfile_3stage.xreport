@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-10-19T22:01:46</DateModified>
+  <DateModified>2015-10-31T13:46:24</DateModified>
   <ModuleName>pipelined_regfile_3stage</ModuleName>
   <SummaryTimeStamp>2015-10-01T03:20:48</SummaryTimeStamp>
-  <SavedFilePath>Y:/try/iseconfig/pipelined_regfile_3stage.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>Y:/try\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/iseconfig/pipelined_regfile_3stage.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA\</ImplementationReportsDirectory>
   <DateInitialized>2015-10-19T22:01:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
