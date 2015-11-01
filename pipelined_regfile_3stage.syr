@@ -140,7 +140,6 @@ WARNING:HDLCompiler:370 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pip
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" Line 87: Port jal is not connected to this instance
 
 Elaborating module <pipelined_regfile_3stage>.
 
@@ -172,13 +171,11 @@ Elaborating module <Pipeline_WB_Stage>.
 Synthesizing Unit <pipelined_regfile_3stage>.
     Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v".
 WARNING:Xst:647 - Input <fileid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" line 87: Output port <jal> of the instance <C0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\pipelined_regfile_3stage.v" line 87: Output port <jr> of the instance <C0> is unconnected or connected to loadless signal.
-    Found 16-bit adder for signal <PCIN> created at line 62.
-    Found 16-bit adder for signal <res> created at line 116.
+    Found 16-bit adder for signal <PCIN> created at line 71.
+    Found 16-bit adder for signal <res> created at line 142.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred   4 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 Unit <pipelined_regfile_3stage> synthesized.
 
 Synthesizing Unit <PC1>.
@@ -246,9 +243,13 @@ Synthesizing Unit <ID_EXE_stage>.
     Found 1-bit register for signal <memToReg_out>.
     Found 1-bit register for signal <branch_out>.
     Found 16-bit register for signal <PC_out>.
+    Found 1-bit register for signal <jr_out>.
+    Found 1-bit register for signal <jal_out>.
+    Found 1-bit register for signal <jump_out>.
+    Found 16-bit register for signal <conc_out>.
     Found 4-bit register for signal <waddr_out>.
     Summary:
-	inferred  77 D-type flip-flop(s).
+	inferred  96 D-type flip-flop(s).
 Unit <ID_EXE_stage> synthesized.
 
 Synthesizing Unit <alu>.
@@ -277,25 +278,30 @@ Synthesizing Unit <pip_stage4>.
     Found 1-bit register for signal <memRead_out>.
     Found 1-bit register for signal <memToReg_out>.
     Found 1-bit register for signal <wen_out>.
+    Found 16-bit register for signal <PC_out>.
+    Found 1-bit register for signal <jal_out>.
     Found 4-bit register for signal <w_addr_out>.
     Summary:
-	inferred  40 D-type flip-flop(s).
+	inferred  57 D-type flip-flop(s).
 Unit <pip_stage4> synthesized.
 
 Synthesizing Unit <DummyReg>.
     Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\DummyReg.v".
+    Found 16-bit register for signal <PC_out>.
     Found 16-bit register for signal <aluout_out>.
     Summary:
-	inferred  16 D-type flip-flop(s).
+	inferred  32 D-type flip-flop(s).
 Unit <DummyReg> synthesized.
 
 Synthesizing Unit <Pipeline_WB_Stage>.
     Related source file is "C:\Users\Madhavan\Desktop\CZ3001_total\CZ3001-ACA\Pipeline_WB_Stage.v".
     Found 16-bit register for signal <w_data_out>.
     Found 1-bit register for signal <wen_out>.
+    Found 16-bit register for signal <PC_out>.
+    Found 1-bit register for signal <jal_out>.
     Found 4-bit register for signal <w_addr_out>.
     Summary:
-	inferred  21 D-type flip-flop(s).
+	inferred  38 D-type flip-flop(s).
 Unit <Pipeline_WB_Stage> synthesized.
 
 =========================================================================
@@ -309,9 +315,9 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Registers                                            : 27
- 1-bit register                                        : 11
- 16-bit register                                       : 9
+# Registers                                            : 36
+ 1-bit register                                        : 16
+ 16-bit register                                       : 13
  256-bit register                                      : 1
  3-bit register                                        : 1
  4-bit register                                        : 3
@@ -322,11 +328,11 @@ Macro Statistics
  16-bit comparator equal                               : 1
  16-bit comparator lessequal                           : 1
  4-bit comparator equal                                : 2
-# Multiplexers                                         : 39
+# Multiplexers                                         : 43
  1-bit 2-to-1 multiplexer                              : 5
  16-bit 16-to-1 multiplexer                            : 3
- 16-bit 2-to-1 multiplexer                             : 30
- 4-bit 2-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 33
+ 4-bit 2-to-1 multiplexer                              : 2
 # Logic shifters                                       : 2
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -385,17 +391,17 @@ Macro Statistics
 # Adders/Subtractors                                   : 3
  16-bit adder                                          : 2
  16-bit addsub                                         : 1
-# Registers                                            : 426
- Flip-Flops                                            : 426
+# Registers                                            : 495
+ Flip-Flops                                            : 495
 # Comparators                                          : 4
  16-bit comparator equal                               : 1
  16-bit comparator lessequal                           : 1
  4-bit comparator equal                                : 2
-# Multiplexers                                         : 52
- 1-bit 2-to-1 multiplexer                              : 19
+# Multiplexers                                         : 41
+ 1-bit 2-to-1 multiplexer                              : 3
  16-bit 16-to-1 multiplexer                            : 3
- 16-bit 2-to-1 multiplexer                             : 29
- 4-bit 2-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 33
+ 4-bit 2-to-1 multiplexer                              : 2
 # Logic shifters                                       : 2
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -407,8 +413,14 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <jal> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <PIPE1/imm_out_3> in Unit <pipelined_regfile_3stage> is equivalent to the following 12 FFs/Latches, which will be removed : <PIPE1/imm_out_4> <PIPE1/imm_out_5> <PIPE1/imm_out_6> <PIPE1/imm_out_7> <PIPE1/imm_out_8> <PIPE1/imm_out_9> <PIPE1/imm_out_10> <PIPE1/imm_out_11> <PIPE1/imm_out_12> <PIPE1/imm_out_13> <PIPE1/imm_out_14> <PIPE1/imm_out_15> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_2> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/imm_out_2> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_8> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/waddr_out_0> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_3> in Unit <pipelined_regfile_3stage> is equivalent to the following 13 FFs/Latches, which will be removed : <PIPE1/imm_out_3> <PIPE1/imm_out_4> <PIPE1/imm_out_5> <PIPE1/imm_out_6> <PIPE1/imm_out_7> <PIPE1/imm_out_8> <PIPE1/imm_out_9> <PIPE1/imm_out_10> <PIPE1/imm_out_11> <PIPE1/imm_out_12> <PIPE1/imm_out_13> <PIPE1/imm_out_14> <PIPE1/imm_out_15> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_10> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/waddr_out_2> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_9> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/waddr_out_1> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_11> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/waddr_out_3> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_0> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/imm_out_0> 
+INFO:Xst:2261 - The FF/Latch <PIPE1/conc_out_1> in Unit <pipelined_regfile_3stage> is equivalent to the following FF/Latch, which will be removed : <PIPE1/imm_out_1> 
 
 Optimizing unit <DummyReg> ...
 
@@ -421,14 +433,13 @@ Optimizing unit <regfile> ...
 Optimizing unit <alu> ...
 
 Optimizing unit <control> ...
-WARNING:Xst:2677 - Node <C0/jr> of sequential type is unconnected in block <pipelined_regfile_3stage>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block pipelined_regfile_3stage, actual ratio is 50.
+Found area constraint ratio of 100 (+ 5) on block pipelined_regfile_3stage, actual ratio is 51.
 FlipFlop PIPE1/alusrc_out has been replicated 3 time(s)
-FlipFlop PIPE1/imm_out_1 has been replicated 1 time(s)
-FlipFlop PIPE1/imm_out_3 has been replicated 3 time(s)
+FlipFlop PIPE1/conc_out_1 has been replicated 1 time(s)
+FlipFlop PIPE1/conc_out_3 has been replicated 3 time(s)
 FlipFlop PIPE1/rdata2_out_1 has been replicated 1 time(s)
 FlipFlop PIPE1/opcode_out_2 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop PIPE1/opcode_out_1 has been replicated 1 time(s) to handle iob=true attribute.
@@ -436,6 +447,8 @@ FlipFlop PIPE1/opcode_out_0 has been replicated 1 time(s) to handle iob=true att
 FlipFlop PIPE1/branch_out has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop PIPE1/alusrc_out has been replicated 1 time(s) to handle iob=true attribute.
 Latch C0/regDst has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop PIPE1/jump_out has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop PIPE1/jr_out has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -443,8 +456,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 427
- Flip-Flops                                            : 427
+# Registers                                            : 490
+ Flip-Flops                                            : 490
 
 =========================================================================
 
@@ -467,31 +480,31 @@ Top Level Output File Name         : pipelined_regfile_3stage.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1045
+# BELS                             : 1083
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 16
-#      LUT2                        : 21
-#      LUT3                        : 81
-#      LUT4                        : 59
-#      LUT5                        : 294
-#      LUT6                        : 310
+#      LUT2                        : 25
+#      LUT3                        : 83
+#      LUT4                        : 26
+#      LUT5                        : 345
+#      LUT6                        : 324
 #      MUXCY                       : 61
 #      MUXF7                       : 103
 #      MUXF8                       : 48
 #      VCC                         : 1
 #      XORCY                       : 48
-# FlipFlops/Latches                : 439
-#      FDR                         : 424
+# FlipFlops/Latches                : 504
+#      FDR                         : 487
 #      FDS                         : 3
-#      LD                          : 12
+#      LD                          : 14
 # RAMS                             : 2
 #      RAMB8BWER                   : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 281
+# IO Buffers                       : 303
 #      IBUF                        : 1
-#      OBUF                        : 280
+#      OBUF                        : 302
 # DSPs                             : 1
 #      DSP48A1                     : 1
 
@@ -502,21 +515,21 @@ Selected Device : 6slx4csg225-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             432  out of   4800     9%  
- Number of Slice LUTs:                  783  out of   2400    32%  
-    Number used as Logic:               783  out of   2400    32%  
+ Number of Slice Registers:             496  out of   4800    10%  
+ Number of Slice LUTs:                  821  out of   2400    34%  
+    Number used as Logic:               821  out of   2400    34%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    847
-   Number with an unused Flip Flop:     415  out of    847    48%  
-   Number with an unused LUT:            64  out of    847     7%  
-   Number of fully used LUT-FF pairs:   368  out of    847    43%  
+ Number of LUT Flip Flop pairs used:    932
+   Number with an unused Flip Flop:     436  out of    932    46%  
+   Number with an unused LUT:           111  out of    932    11%  
+   Number of fully used LUT-FF pairs:   385  out of    932    41%  
    Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                         285
- Number of bonded IOBs:                 282  out of    132   213% (*) 
-    IOB Flip Flops/Latches:               7
+ Number of IOs:                         306
+ Number of bonded IOBs:                 304  out of    132   230% (*) 
+    IOB Flip Flops/Latches:               8
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     12     8%  
@@ -547,8 +560,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 430   |
-C0/_n0045<1>(C0/_n0045<1>1:O)      | NONE(*)(C0/aluop_0)    | 12    |
+clk                                | BUFGP                  | 493   |
+C0/_n0038<1>(C0/_n0038<1>1:O)      | NONE(*)(C0/aluop_0)    | 14    |
 -----------------------------------+------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -563,8 +576,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 6.404ns (Maximum Frequency: 156.141MHz)
-   Minimum input arrival time before clock: 4.478ns
+   Minimum period: 6.411ns (Maximum Frequency: 155.980MHz)
+   Minimum input arrival time before clock: 4.483ns
    Maximum output required time after clock: 9.214ns
    Maximum combinational path delay: No path found
 
@@ -574,10 +587,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.404ns (frequency: 156.141MHz)
-  Total number of paths / destination ports: 16086 / 460
+  Clock period: 6.411ns (frequency: 155.980MHz)
+  Total number of paths / destination ports: 20003 / 518
 -------------------------------------------------------------------------
-Delay:               6.404ns (Levels of Logic = 3)
+Delay:               6.411ns (Levels of Logic = 3)
   Source:            im/Mram_memory (RAM)
   Destination:       ALU0/Mmult_n0021 (DSP)
   Source Clock:      clk rising
@@ -587,20 +600,20 @@ Delay:               6.404ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB8BWER:CLKAWRCLK->DOADO5   66   1.650   1.758  im/Mram_memory (INST_5_OBUF)
-     LUT4:I2->O            1   0.203   0.580  RF0/wen_waddr[3]_AND_31_o_SW0 (N6)
+     RAMB8BWER:CLKAWRCLK->DOADO4   67   1.650   1.764  im/Mram_memory (INST_4_OBUF)
+     LUT5:I3->O            1   0.203   0.580  RF0/wen_waddr[3]_AND_31_o_SW0 (N6)
      LUT6:I5->O           16   0.205   1.005  RF0/wen_waddr[3]_AND_31_o (RF0/wen_waddr[3]_AND_31_o)
-     LUT3:I2->O            3   0.205   0.650  RF0/Mmux_rdata117 (rdata1_0_OBUF)
+     LUT5:I4->O            3   0.205   0.650  RF0/Mmux_rdata117 (rdata1_0_OBUF)
      DSP48A1:B0                0.149          ALU0/Mmult_n0021
     ----------------------------------------
-    Total                      6.404ns (2.412ns logic, 3.992ns route)
-                                       (37.7% logic, 62.3% route)
+    Total                      6.411ns (2.412ns logic, 3.999ns route)
+                                       (37.6% logic, 62.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 430 / 430
+  Total number of paths / destination ports: 493 / 493
 -------------------------------------------------------------------------
-Offset:              4.478ns (Levels of Logic = 2)
+Offset:              4.483ns (Levels of Logic = 2)
   Source:            rst (PAD)
   Destination:       dm/Mram_memory (RAM)
   Destination Clock: clk rising
@@ -609,27 +622,27 @@ Offset:              4.478ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           429   1.222   2.187  rst_IBUF (rst_IBUF)
+     IBUF:I->O           492   1.222   2.191  rst_IBUF (rst_IBUF)
      LUT2:I0->O            2   0.203   0.616  dm/Mmux_BUS_000111 (dm/BUS_0001)
      RAMB8BWER:WEAWEL0         0.250          dm/Mram_memory
     ----------------------------------------
-    Total                      4.478ns (1.675ns logic, 2.803ns route)
+    Total                      4.483ns (1.675ns logic, 2.808ns route)
                                        (37.4% logic, 62.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 5743 / 278
+  Total number of paths / destination ports: 5930 / 301
 -------------------------------------------------------------------------
 Offset:              9.214ns (Levels of Logic = 4)
-  Source:            PIPE1/imm_out_3_2 (FF)
+  Source:            PIPE1/conc_out_3_2 (FF)
   Destination:       aluout<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: PIPE1/imm_out_3_2 to aluout<15>
+  Data Path: PIPE1/conc_out_3_2 to aluout<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             12   0.447   1.013  PIPE1/imm_out_3_2 (PIPE1/imm_out_3_2)
+     FDR:C->Q             12   0.447   1.013  PIPE1/conc_out_3_2 (PIPE1/conc_out_3_2)
      LUT3:I1->O            6   0.203   0.744  Mmux_rdata2_imm_ID_EXE121 (rdata2_imm_ID_EXE_5_OBUF)
      DSP48A1:A5->M15       1   2.835   0.580  ALU0/Mmult_n0021 (ALU0/n0021<15>)
      LUT6:I5->O            2   0.205   0.616  ALU0/Mmux_out787 (aluout_15_OBUF)
@@ -639,40 +652,40 @@ Offset:              9.214ns (Levels of Logic = 4)
                                        (68.0% logic, 32.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'C0/_n0045<1>'
-  Total number of paths / destination ports: 242 / 18
+Timing constraint: Default OFFSET OUT AFTER for Clock 'C0/_n0038<1>'
+  Total number of paths / destination ports: 225 / 17
 -------------------------------------------------------------------------
-Offset:              7.921ns (Levels of Logic = 6)
+Offset:              7.891ns (Levels of Logic = 6)
   Source:            C0/regDst (LATCH)
   Destination:       rdata2<1> (PAD)
-  Source Clock:      C0/_n0045<1> falling
+  Source Clock:      C0/_n0038<1> falling
 
   Data Path: C0/regDst to rdata2<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               6   0.498   0.973  C0/regDst (C0/regDst)
+     LD:G->Q               5   0.498   0.943  C0/regDst (C0/regDst)
      LUT3:I0->O           64   0.205   1.744  Mmux_RAddr211 (RAddr2<0>)
      LUT6:I4->O            1   0.203   0.000  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_47 (RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_47)
      MUXF7:I1->O           1   0.140   0.000  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_3_f7_6 (RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_3_f77)
      MUXF8:I1->O           1   0.152   0.580  RF0/Mmux_raddr2[3]_regdata[15][15]_wide_mux_27_OUT_2_f8_6 (RF0/raddr2[3]_regdata[15][15]_wide_mux_27_OUT<1>)
-     LUT3:I2->O            3   0.205   0.650  RF0/Mmux_rdata281 (rdata2_1_OBUF)
+     LUT5:I4->O            3   0.205   0.650  RF0/Mmux_rdata281 (rdata2_1_OBUF)
      OBUF:I->O                 2.571          rdata2_1_OBUF (rdata2<1>)
     ----------------------------------------
-    Total                      7.921ns (3.974ns logic, 3.947ns route)
-                                       (50.2% logic, 49.8% route)
+    Total                      7.891ns (3.974ns logic, 3.917ns route)
+                                       (50.4% logic, 49.6% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock C0/_n0045<1>
+Clock to Setup on destination clock C0/_n0038<1>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    3.354|         |
+clk            |         |         |    3.404|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -680,21 +693,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-C0/_n0045<1>   |         |    4.802|         |         |
-clk            |    6.404|         |         |         |
+C0/_n0038<1>   |         |    4.772|         |         |
+clk            |    6.411|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.43 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.21 secs
  
 --> 
 
-Total memory usage is 295528 kilobytes
+Total memory usage is 295472 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   22 (   0 filtered)
-Number of infos    :    7 (   0 filtered)
+Number of warnings :   19 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

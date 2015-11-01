@@ -23,6 +23,8 @@ module DummyReg(
     input clk,
     input rst,
     input[`DSIZE-1:0] aluout_in,
+	 input [`ISIZE-1:0] PC_in,
+	 output reg [`ISIZE-1:0] PC_out,
     output reg[`DSIZE-1:0] aluout_out
     );
 
@@ -30,10 +32,12 @@ always @ (posedge clk) begin
 	if(rst)
 	begin
 		aluout_out <= 0;
+		PC_out<=0;
 	end
    else
 	begin
 		aluout_out<=aluout_in;
+		PC_out<=PC_in;
 	end
  
 end

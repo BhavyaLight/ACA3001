@@ -44,6 +44,11 @@ module test_bench_5_stage_pipeline;
 	wire [15:0] aluout_WB;
 	wire zero;
 	wire [15:0] res;
+	wire jump;
+	wire jal;
+	wire jr;
+	wire [15:0] mux_jal_wdata;
+	wire [3:0] mux_jal;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipelined_regfile_3stage uut (
@@ -77,7 +82,12 @@ module test_bench_5_stage_pipeline;
 		.aluout_DM(aluout_DM), 
 		.aluout_WB(aluout_WB),
 		.zero(zero),
-		.res(res)
+		.res(res),
+		.jump_ID_EXE(jump),
+		.jal_DM_WB(jal),
+		.jr_ID_EXE(jr),
+		.mux_jal(mux_jal),
+		.mux_jal_wdata(mux_jal_wdata)
 	);
 
 

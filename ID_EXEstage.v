@@ -14,6 +14,10 @@ module ID_EXE_stage (
 	input memRead_in,
 	input memToReg_in,
 	input branch_in,
+	input jal_in,
+	input jr_in,
+	input jump_in,
+	input [`ISIZE-1:0] conc_in,
 	input [`ISIZE-1:0] PC_in,
 	
 	output reg [`DSIZE-1:0] rdata1_out,
@@ -26,6 +30,10 @@ module ID_EXE_stage (
 	output reg memRead_out,
 	output reg memToReg_out,
 	output reg branch_out,
+	output reg jal_out,
+	output reg jump_out,
+	output reg jr_out,
+	output reg [`ISIZE-1:0] conc_out,
 	output reg [`ISIZE-1:0] PC_out,
 	output reg[`ASIZE-1:0]waddr_out
 	
@@ -53,6 +61,10 @@ always @ (posedge clk) begin
 	   memToReg_out<=0;
 	   branch_out<=0;
 		PC_out<=0;
+		jr_out<=0;
+		jal_out<=0;
+		jump_out<=0;
+		conc_out<=0;
 	end
    else
 	begin
@@ -68,6 +80,10 @@ always @ (posedge clk) begin
 	   memToReg_out<=memToReg_in;
 	   branch_out<=branch_in;
 		PC_out<=PC_in;
+		jr_out<=jr_in;
+		jal_out<=jal_in;
+		jump_out<=jump_in;
+		conc_out<=conc_in;
 	end
  
 end

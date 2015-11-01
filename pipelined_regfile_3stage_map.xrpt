@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Sat Oct 31 17:22:41 2015">
+  <application stringID="Map" timeStamp="Sun Nov 01 22:20:57 2015">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -69,16 +69,16 @@
       <item DEFAULT="None" label="-p" stringID="MAP_PARTNAME" value="xc6slx4-csg225-3"/>
     </section>
     <task stringID="MAP_PACK_REPORT">
-      <item AVAILABLE="4800" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="432">
-        <item dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="422"/>
-        <item dataType="int" stringID="MAP_NUM_SLICE_LATCH" value="10"/>
+      <item AVAILABLE="4800" dataType="int" label="Number of Slice Registers" stringID="MAP_SLICE_REGISTERS" value="92">
+        <item dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="80"/>
+        <item dataType="int" stringID="MAP_NUM_SLICE_LATCH" value="12"/>
         <item dataType="int" stringID="MAP_NUM_SLICE_LATCHTHRU" value="0"/>
         <item dataType="int" stringID="MAP_NUM_SLICE_LATCHLOGIC" value="0"/>
       </item>
-      <item AVAILABLE="2400" dataType="int" label="Number of Slice LUTs" stringID="MAP_SLICE_LUTS" value="749">
-        <item dataType="int" label="Number using O5 output only" stringID="MAP_NUM_LOGIC_O5ONLY" value="15"/>
-        <item dataType="int" label="Number using O6 output only" stringID="MAP_NUM_LOGIC_O6ONLY" value="697"/>
-        <item dataType="int" label="Number using O5 and O6" stringID="MAP_NUM_LOGIC_O5ANDO6" value="36"/>
+      <item AVAILABLE="2400" dataType="int" label="Number of Slice LUTs" stringID="MAP_SLICE_LUTS" value="151">
+        <item dataType="int" label="Number using O5 output only" stringID="MAP_NUM_LOGIC_O5ONLY" value="11"/>
+        <item dataType="int" label="Number using O6 output only" stringID="MAP_NUM_LOGIC_O6ONLY" value="96"/>
+        <item dataType="int" label="Number using O5 and O6" stringID="MAP_NUM_LOGIC_O5ANDO6" value="43"/>
         <item dataType="int" stringID="MAP_NUM_ROM_O5ONLY" value="0"/>
         <item dataType="int" stringID="MAP_NUM_ROM_O6ONLY" value="0"/>
         <item dataType="int" stringID="MAP_NUM_ROM_O5ANDO6" value="0"/>
@@ -98,10 +98,10 @@
         <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_CARRY4" value="1"/>
         <item dataType="int" stringID="MAP_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
       </item>
-      <item AVAILABLE="132" dataType="int" stringID="MAP_AGG_BONDED_IO" value="282"/>
+      <item AVAILABLE="132" dataType="int" stringID="MAP_AGG_BONDED_IO" value="284"/>
       <item AVAILABLE="68" dataType="int" stringID="MAP_AGG_UNBONDED_IO" value="0"/>
       <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="5"/>
-      <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOB_LATCH" value="2"/>
+      <item AVAILABLE="0" dataType="int" stringID="MAP_NUM_IOB_LATCH" value="3"/>
       <item AVAILABLE="34" dataType="int" stringID="MAP_NUM_IOBM" value="0"/>
       <item AVAILABLE="66" dataType="int" stringID="MAP_NUM_BONDED_IOBM" value="0"/>
       <item AVAILABLE="34" dataType="int" stringID="MAP_NUM_IOBS" value="0"/>

@@ -2,28 +2,28 @@ Command line:
    pipelined_regfile_3stage_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  59383
+     -socket  55632
 
-Sat Oct 24 14:43:15 2015
+Mon Nov 02 00:38:13 2015
 
 
- Elaboration Time: 0.03125 sec
+ Elaboration Time: 0.015625 sec
 
- Current Memory Usage: 836.891 Meg
+ Current Memory Usage: 836.94 Meg
 
- Total Signals          : 122
- Total Nets             : 403
- Total Signal Drivers   : 54
+ Total Signals          : 149
+ Total Nets             : 547
+ Total Signal Drivers   : 72
  Total Blocks           : 12
  Total Primitive Blocks : 11
- Total Processes        : 65
- Total Traceable Variables  : 72
- Total Scalar Nets and Variables : 25514
-Total Line Count : 294
+ Total Processes        : 83
+ Total Traceable Variables  : 84
+ Total Scalar Nets and Variables : 25730
+Total Line Count : 387
 
- Total Simulation Time: 0.09375 sec
+ Total Simulation Time: 0.0625 sec
 
- Current Memory Usage: 836.891 Meg
+ Current Memory Usage: 836.94 Meg
 
-Sat Oct 24 14:43:24 2015
+Mon Nov 02 00:38:23 2015
 

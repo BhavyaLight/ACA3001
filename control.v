@@ -185,7 +185,21 @@ module control(
 					 jr = 0;
         end
 		  
-		 
+		  `JAL: begin
+                wen=1;
+					 alusrc=0;
+ 					 regDst=0;
+					 memWrite=0;
+					 memRead=0;
+					 memToReg=0;
+					 branch=0;
+					 aluop=inst[2:0];
+					 //Madhavan's Note: jump control signal is enabled for this instruction 
+					 jump = 1;
+					 jal = 1;
+					 jr = 0;
+        end
+		  
 		  `JR: begin
                 wen=0;
 					 alusrc=0;

@@ -44,3 +44,39 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-csg225-3 pipelined_r
 map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
 map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
 map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-csg225-3 pipelined_regfile_3stage.ngc pipelined_regfile_3stage.ngd  
+map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-csg225-3 pipelined_regfile_3stage.ngc pipelined_regfile_3stage.ngd  
+map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-csg225-3 pipelined_regfile_3stage.ngc pipelined_regfile_3stage.ngd  
+map -intstyle ise -p xc6slx4-csg225-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipelined_regfile_3stage_map.ncd pipelined_regfile_3stage.ngd pipelined_regfile_3stage.pcf 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
+xst -intstyle ise -ifn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.xst" -ofn "C:/Users/Madhavan/Desktop/CZ3001_total/CZ3001-ACA/pipelined_regfile_3stage.syr" 
