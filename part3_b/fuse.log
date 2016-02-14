@@ -1,0 +1,39 @@
+Running: C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o Y:/try3/test_bench_5_stage_pipeline_isim_beh.exe -prj Y:/try3/test_bench_5_stage_pipeline_beh.prj work.test_bench_5_stage_pipeline work.glbl 
+ISim P.49d (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "Y:/try3/regfile.v" into library work
+Analyzing Verilog file "Y:/try3/pip_stage4.v" into library work
+Analyzing Verilog file "Y:/try3/Pipeline_WB_Stage.v" into library work
+Analyzing Verilog file "Y:/try3/PCDelay.v" into library work
+Analyzing Verilog file "Y:/try3/PC.v" into library work
+Analyzing Verilog file "Y:/try3/memory.v" into library work
+Analyzing Verilog file "Y:/try3/ID_EXEstage.v" into library work
+Analyzing Verilog file "Y:/try3/DummyReg.v" into library work
+Analyzing Verilog file "Y:/try3/control.v" into library work
+Analyzing Verilog file "Y:/try3/alu.v" into library work
+Analyzing Verilog file "Y:/try3/remote_sources/_/try/pipelined_regfile_3stage.v" into library work
+Analyzing Verilog file "Y:/try3/test_bench_3_stage_pipeline.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module PC1
+Compiling module memory
+Compiling module control
+Compiling module regfile
+Compiling module PCDelay
+Compiling module ID_EXE_stage
+Compiling module alu
+Compiling module pip_stage4
+Compiling module DummyReg
+Compiling module Pipeline_WB_Stage
+Compiling module pipelined_regfile_3stage
+Compiling module test_bench_5_stage_pipeline
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 6 sub-compilation(s) to finish...
+Compiled 13 Verilog Units
+Built simulation executable Y:/try3/test_bench_5_stage_pipeline_isim_beh.exe
+Fuse Memory Usage: 31612 KB
+Fuse CPU Usage: 686 ms

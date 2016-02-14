@@ -1,0 +1,26 @@
+ISim log file
+Running: Y:\try3\test_bench_5_stage_pipeline_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Y:/try3/test_bench_5_stage_pipeline_isim_beh.wdb 
+ISim P.49d (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Opening Fileid  0
+Opening Fileid  8
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+The simulator has terminated in an unexpected manner.  Please review the ISim log (isim.log) for details.
