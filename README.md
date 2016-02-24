@@ -23,3 +23,5 @@ The machine code for the following assembly commands can be found in define.v
 `define JR 4'b1011
 `define JAL 4'b1101
 `define JUMP 4'b1100
+
+More about the project and figures: https://bhavya0x83b.wordpress.com/
